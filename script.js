@@ -18,21 +18,30 @@ fetch_btn.addEventListener("click", () => {
     fetch_btn.style.display = "none";
     demo.style.display = "block";
 
-    var lattlong = new google.maps.LatLng(lat, lon);
-    var myOptions = {
-      center: lattlong,
-      zoom: 15,
-      mapTypeControl: true,
-      navigationControlOptions: {
-        style: google.maps.NavigationControlStyle.SMALL,
-      },
-    };
-    var maps = new google.maps.Map(document.getElementById("demo"), myOptions);
-    new google.maps.Marker({
-      position: lattlong,
-      map: maps,
-      title: "You are here!",
-    });
+    const mapUrl = `https://maps.google.com/maps?q=${lat},${lon}&output=embed`;
+    const iframe = document.createElement("iframe");
+    iframe.setAttribute("src", mapUrl);
+    iframe.setAttribute("width", "100%");
+    iframe.setAttribute("height", "100%");
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("style", "border:0");
+    demo.appendChild(iframe);
+
+    // var lattlong = new google.maps.LatLng(lat, lon);
+    // var myOptions = {
+    //   center: lattlong,
+    //   zoom: 15,
+    //   mapTypeControl: true,
+    //   navigationControlOptions: {
+    //     style: google.maps.NavigationControlStyle.SMALL,
+    //   },
+    // };
+    // var maps = new google.maps.Map(document.getElementById("demo"), myOptions);
+    // new google.maps.Marker({
+    //   position: lattlong,
+    //   map: maps,
+    //   title: "You are here!",
+    // });
 
     console.log(lat, lon);
     const END_POINT = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=d4cd2f8f82755b4d77f813f5cbef36df`;
