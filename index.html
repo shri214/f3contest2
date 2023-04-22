@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        box-sizing: border-box;
+      }
+      .maps,
+      .weather {
+        background-color: #000;
+        width: 60%;
+        height: fit-content;
+        padding: 5%;
+        margin: auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .heading {
+        font-size: 3rem;
+      }
+      .fecthing {
+        height: 30px;
+        padding: 2px 20px;
+        width: 200px;
+      }
+      .lans {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        width: 100%;
+      }
+      .lans span {
+        font-size: 1.5rem;
+      }
+      #demo {
+        margin-top: 20px;
+        display: none;
+        height: 300px;
+        width: 100%;
+        padding: 5px 10px;
+      }
+      .weather {
+        align-items: flex-start;
+        background-color: #fff;
+        display: none;
+        color: black;
+      }
+      .details {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        gap: 10px;
+      }
+      .details span {
+        font-size: 1.5rem;
+        display: inline-block;
+        width: 23%;
+      }
+      .details div {
+        display: flex;
+        flex-flow: row;
+      }
+      #latLon {
+        display: flex;
+      }
+      #latLon div {
+        width: 50%;
+      }
+      #latLon div span {
+        display: inline-block;
+        width: 46%;
+      }
+    </style>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="maps">
+      <h1 class="heading">Weather Api</h1>
+      <div class="lans"></div>
+      <div id="demo"></div>
+      <button class="fecthing">Fetch Data</button>
+    </div>
+    <div class="weather">
+      <h1 class="heading">Weather Data</h1>
+      <div class="details"></div>
+    </div>
+
+    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+  </body>
+</html>
